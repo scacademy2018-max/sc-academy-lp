@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCアカデミー｜新発田の個別指導塾｜新入生募集中</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a1a;
+  }
+  .lp {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, #0f3460 0%, #1a5276 60%, #0e6655 100%);
+    padding: 52px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border: 44px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 170px; height: 170px;
+    border: 32px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,220,60,0.18);
+    border: 1px solid rgba(255,220,60,0.5);
+    color: #FFD700;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+  .hero-catch {
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .hero-title .accent { color: #FFD700; font-size: 42px; }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.9;
+    margin-top: 18px;
+  }
+  .hero-cta {
+    display: block;
+    margin: 30px auto 0;
+    background: #FFD700;
+    color: #0f3460;
+    font-weight: 900;
+    font-size: 16px;
+    padding: 17px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* ===== WARNING ===== */
+  .warning {
+    background: #FFF8E1;
+    border-left: 5px solid #e67e22;
+    padding: 26px 20px;
+  }
+  .warning-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c0392b;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .warning-icon {
+    width: 22px; height: 22px;
+    background: #c0392b;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .check-list { list-style: none; }
+  .check-list li {
+    font-size: 13px;
+    color: #7b3a00;
+    padding: 7px 0 7px 22px;
+    border-bottom: 1px dashed rgba(180,100,0,0.2);
+    position: relative;
+    line-height: 1.6;
+  }
+  .check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c0392b;
+    font-weight: 700;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .warning-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #c0392b;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section { padding: 44px 20px; }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #1a5276;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f3460;
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .section-title em { color: #c0392b; font-style: normal; }
+  .divider {
+    width: 40px; height: 3px;
+    background: #FFD700;
+    border-radius: 2px;
+    margin: 0 0 22px;
+  }
+
+  /* ===== NUMBERS ===== */
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .number-card {
+    background: #f4f8fc;
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+    border: 1px solid #d5e8f5;
+  }
+  .number-card.accent { background: #0f3460; border-color: #0f3460; }
+  .number-val {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #0f3460;
+    line-height: 1;
+  }
+  .number-card.accent .number-val { color: #FFD700; }
+  .number-unit { font-size: 14px; font-weight: 700; color: #0f3460; }
+  .number-card.accent .number-unit { color: #FFD700; }
+  .number-label { font-size: 11px; color: #666; margin-top: 6px; line-height: 1.4; }
+  .number-card.accent .number-label { color: rgba(255,255,255,0.7); }
+
+  /* ===== RESULTS (合格実績) ===== */
+  .results-bg {
+    background: #0f3460;
+    padding: 44px 20px;
+  }
+  .results-bg .section-label { color: #FFD700; }
+  .results-bg .section-title { color: #fff; }
+  .results-year {
+    display: inline-block;
+    background: #FFD700;
+    color: #0f3460;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .result-school { font-size: 14px; color: #fff; font-weight: 500; }
+  .result-count {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #FFD700;
+  }
+  .result-count span { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 400; }
+  .result-total {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+  .result-total strong { color: #FFD700; font-size: 18px; }
+
+  /* ===== WHY EARLY ===== */
+  .early-bg {
+    background: #1a1a2e;
+    padding: 44px 20px;
+  }
+  .early-bg .section-label { color: #FFD700; }
+  .early-bg .section-title { color: #fff; }
+  .timeline { margin-top: 24px; position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px; top: 0; bottom: 0;
+    width: 2px;
+    background: rgba(255,255,255,0.15);
+  }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 26px;
+    align-items: flex-start;
+  }
+  .tl-dot {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(255,215,0,0.12);
+    border: 2px solid #FFD700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFD700;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 1;
+  }
+  .tl-grade { font-size: 11px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
+  .tl-text { font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.7; }
+  .tl-text strong { color: #FFD700; }
+
+  /* ===== FEATURES ===== */
+  .feature-card {
+    background: #fff;
+    border: 1.5px solid #e8eff7;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .feature-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: #e8f4fd;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+  .feature-title { font-size: 14px; font-weight: 700; color: #0f3460; margin-bottom: 6px; }
+  .feature-desc { font-size: 12px; color: #555; line-height: 1.7; }
+
+  /* ===== REVIEWS ===== */
+  .reviews-bg { background: #f7f9fc; padding: 44px 20px; }
+  .google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 18px;
+  }
+  .g-circle {
+    width: 12px; height: 12px;
+    background: #4285F4;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .review-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border: 1px solid #e5e8ee;
+  }
+  .review-card.featured {
+    border: 2px solid #0f3460;
+    position: relative;
+  }
+  .review-featured-badge {
+    position: absolute;
+    top: -11px; left: 16px;
+    background: #0f3460;
+    color: #FFD700;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+  }
+  .review-stars { color: #FFD700; font-size: 14px; margin-bottom: 8px; letter-spacing: 2px; }
+  .review-text { font-size: 12.5px; color: #333; line-height: 1.85; margin-bottom: 10px; }
+  .review-text strong { color: #0f3460; }
+  .review-author { font-size: 11px; color: #999; text-align: right; }
+
+  /* ===== URGENCY ===== */
+  .urgency {
+    background: #c0392b;
+    padding: 44px 20px;
+    text-align: center;
+  }
+  .urgency-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .urgency-title span { color: #FFD700; font-size: 30px; }
+  .urgency-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.9;
+    margin-bottom: 24px;
+  }
+  .urgency-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .urgency-box {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 16px 10px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.6;
+  }
+  .urgency-box strong {
+    display: block;
+    font-size: 18px;
+    color: #FFD700;
+    margin-bottom: 6px;
+  }
+
+  /* ===== PLAN ===== */
+  .plan-card {
+    background: #fff;
+    border: 2px solid #e8eff7;
+    border-radius: 14px;
+    padding: 22px 20px;
+    margin-bottom: 12px;
+  }
+  .plan-card.popular { border-color: #0f3460; position: relative; }
+  .plan-pop-badge {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: #0f3460;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .plan-name { font-size: 15px; font-weight: 700; color: #0f3460; margin-bottom: 6px; }
+  .plan-desc { font-size: 12px; color: #666; margin-bottom: 14px; line-height: 1.7; }
+  .plan-price { font-size: 20px; font-weight: 900; color: #0f3460; }
+  .plan-price span { font-size: 12px; font-weight: 400; color: #999; }
+  .plan-note {
+    font-size: 11px;
+    color: #888;
+    margin-top: 18px;
+    text-align: center;
+    line-height: 1.9;
+    background: #f4f8fc;
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  /* ===== CTA FOOTER ===== */
+  .cta-footer {
+    background: #0f3460;
+    padding: 52px 24px;
+    text-align: center;
+  }
+  .cta-footer-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .cta-footer-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+  .cta-btn-main {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 14px;
+    padding: 18px;
+    background: #FFD700;
+    color: #0f3460;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .cta-btn-line {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 17px;
+    background: #06C755;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .info-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+  .info-pill {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .footer-small {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 26px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="lp">
+
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <div class="hero-badge">🎯 中学生・新入生 募集中</div>
+    <div class="hero-catch">「いつかやろう」が、最大のリスクです。</div>
+    <div class="hero-title">
+      受験は<br><span class="accent">中1</span>から<br>始まっている。
+    </div>
+    <div class="hero-sub">
+      講師歴10年以上のプロが、<br>
+      お子さんの「成績が上がる仕組み」を<br>
+      一緒につくります。
+    </div>
+    <a href="https://scacademy-shibata.jp/contact/" class="hero-cta">無料体験授業を申し込む →</a>
+  </div>
+
+  <!-- ===== WARNING ===== -->
+  <div class="warning">
+    <div class="warning-title">
+      <div class="warning-icon">!</div>
+      こんなお悩み、ありませんか？
+    </div>
+    <ul class="check-list">
+      <li>定期テストの点数がなかなか上がらない</li>
+      <li>子どもが自分から勉強しない</li>
+      <li>どこをどう勉強させればいいかわからない</li>
+      <li>このままで高校受験が心配</li>
+      <li>中1のうちから準備したいけど何をすれば…</li>
+    </ul>
+    <div class="warning-note">
+      ⚠ 中3になってから慌てても、間に合わないことがあります。<br>
+      手遅れになる前に、今動きましょう。
+    </div>
+  </div>
+
+  <!-- ===== TOP REVIEW ===== -->
+  <div style="background:#fff7f0; padding:28px 20px; border-bottom:3px solid #0f3460;">
+    <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; color:#c0392b; margin-bottom:10px;">⭐ 実際に通った保護者の声</div>
+    <div style="background:#fff; border:2px solid #0f3460; border-radius:14px; padding:20px; position:relative;">
+      <div style="position:absolute; top:-11px; left:16px; background:#0f3460; color:#FFD700; font-size:10px; font-weight:700; padding:3px 12px; border-radius:20px;">Google 口コミ ★★★★★</div>
+      <div style="font-size:13px; color:#333; line-height:1.85; margin-top:6px;">
+        崖っぷちの息子はこの塾と出会えなかったら志望校合格は無理だったと思います。勉強嫌いで点数が取れず<strong style="color:#0f3460;">志望校合格は絶望的で学校からも難色を示される程の成績から合格</strong>させていただくことが出来ました。<br><br>
+        プロです。先生がプロフェッショナルで、今まで通った塾とはまるで違いました。きめ細かな計画とご指導と、怠け心満載の息子へのいいタイミングでの叱咤激励で受験を無事に乗り越えさせてくださいました。<br><br>
+        <strong style="color:#0f3460;">母の不安までフォローしてくださって</strong>。放り出さず根気よく粘り強く接してくださって、理解度に応じてのプラン変更もあったり、勉強との向き合い方や合格するための具体的な学習時間もご提案してくださいました。<br><br>
+        ラフで気軽に通える教室の雰囲気と集中できる自習室や<strong style="color:#0f3460;">先生方の高い指導力、なのに料金もお安くて</strong>。自信を持ってお勧めできる塾です。
+      </div>
+      <div style="font-size:11px; color:#999; text-align:right; margin-top:10px;">中3生 保護者（お母様）</div>
+    </div>
+  </div>
+
+  <!-- ===== NUMBERS ===== -->
+  <div class="section">
+    <div class="section-label">SC ACADEMY</div>
+    <div class="section-title"><em>結果</em>が出る塾には<br>理由がある</div>
+    <div class="divider"></div>
+    <div class="numbers-grid">
+      <div class="number-card accent">
+        <div class="number-val">10</div>
+        <div class="number-unit">年以上</div>
+        <div class="number-label">塾長の受験指導歴</div>
+      </div>
+      <div class="number-card">
+        <div class="number-val" style="font-size:22px; line-height:1.2;">１対１<br>もしくは<br>１対２</div>
+        <div class="number-label" style="margin-top:8px;">きめ細かい個別指導</div>
+      </div>
+      <div class="number-card">
+        <div class="number-val">0</div>
+        <div class="number-unit">円</div>
+        <div class="number-label">入塾金・入会金不要</div>
+      </div>
+      <div class="number-card">
+        <div class="number-val">毎回</div>
+        <div class="number-unit">報告</div>
+        <div class="number-label">授業後に保護者へ<br>学習状況をメール連絡</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 合格実績 ===== -->
+  <div class="results-bg">
+    <div class="section-label">RESULTS</div>
+    <div class="section-title">2025年度<br>合格実績</div>
+    <div class="results-year">2025年度 高校入試</div>
+
+    <div class="result-item">
+      <div class="result-school">新発田高校 普通科</div>
+      <div class="result-count">2<span>名</span></div>
+    </div>
+    <div class="result-item">
+      <div class="result-school">新発田南高校 普通科</div>
+      <div class="result-count">3<span>名</span></div>
+    </div>
+    <div class="result-item">
+      <div class="result-school">新発田商業高校</div>
+      <div class="result-count">3<span>名</span></div>
+    </div>
+    <div class="result-item">
+      <div class="result-school">新発田農業高校</div>
+      <div class="result-count">1<span>名</span></div>
+    </div>
+    <div class="result-item">
+      <div class="result-school">ほか</div>
+      <div class="result-count">4<span>名</span></div>
+    </div>
+
+    <div class="result-total">
+      2025年度 合計 <strong>13名</strong> 合格
+    </div>
+  </div>
+
+  <!-- ===== WHY EARLY ===== -->
+  <div class="early-bg">
+    <div class="section-label">なぜ早期対策が必要か</div>
+    <div class="section-title">中1から始める子と<br>中3から始める子の<br>差は、<em style="color:#FFD700">2年分</em>です。</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">中1<br>春</div>
+        <div class="tl-content">
+          <div class="tl-grade">中学1年生（入学直後）</div>
+          <div class="tl-text">英語・数学の基礎を固める黄金期。ここで<strong>学習習慣と正しい勉強法</strong>を身につけることが最大の近道。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">中2</div>
+        <div class="tl-content">
+          <div class="tl-grade">中学2年生</div>
+          <div class="tl-text">内容が一気に難しくなる魔の学年。中1の土台がないと<strong>ここで大きく躓く</strong>生徒が続出します。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">中3<br>春</div>
+        <div class="tl-content">
+          <div class="tl-grade">中学3年生（受験本番）</div>
+          <div class="tl-text">ここから始めると<strong>2年分の差を埋める時間</strong>がありません。焦りだけが残る状況に。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FEATURES ===== -->
+  <div class="section">
+    <div class="section-label">SCアカデミーの強み</div>
+    <div class="section-title">他の塾と<br>ここが違います</div>
+    <div class="divider"></div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🧑‍🏫</div>
+      <div>
+        <div class="feature-title">「自分から動く力」を育てる個別指導</div>
+        <div class="feature-desc">授業＋スケジュール管理された自習時間で「わかる→できる」まで完全サポート。大手予備校経験を持つ塾長が直接関わります。</div>
+      </div>
+    </div>
+
+<div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <div>
+        <div class="feature-title">カフェのような空間で集中できる</div>
+        <div class="feature-desc">圧迫感のない雰囲気で、生徒が話しにくいことも話せる関係を構築。勉強以外の潜在的な問題にも対応します。</div>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📧</div>
+      <div>
+        <div class="feature-title">授業後すぐに保護者へ学習報告</div>
+        <div class="feature-desc">お子様の授業内容・学習状況を毎回メールでご連絡。保護者の方も安心して任せられます。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== REVIEWS ===== -->
+  <div class="reviews-bg">
+    <div class="section-label">VOICE</div>
+    <div class="section-title">保護者・生徒の<br>リアルな声</div>
+    <div class="divider"></div>
+    <div class="google-badge">
+      <span class="g-circle"></span> Google 口コミ より（全て★★★★★）
+    </div>
+
+    <div class="review-card featured">
+      <div class="review-featured-badge">⭐ 最も読まれている口コミ</div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        崖っぷちの息子はこの塾と出会えなかったら志望校合格は無理だったと思います。勉強嫌いで点数が取れず<strong>志望校合格は絶望的で学校からも難色を示される程の成績から合格</strong>させていただくことが出来ました。<br><br>
+        プロです。先生がプロフェッショナルで、今まで通った塾とはまるで違いました。きめ細かな計画とご指導と、怠け心満載の息子へのいいタイミングでの叱咤激励で受験を無事に乗り越えさせてくださいました。<br><br>
+        授業ごとに進捗状況をお知らせしてくださったり、<strong>母の不安までフォローしてくださって</strong>。放り出さず根気よく粘り強く接してくださって、理解度に応じてのプラン変更もあったり、勉強との向き合い方や合格するための具体的な学習時間もご提案してくださいました。<br><br>
+        ラフで気軽に通える教室の雰囲気と集中できる自習室や先生方の<strong>高い指導力、なのに料金もお安くて</strong>。自信を持ってお勧めできる塾です。
+      </div>
+      <div class="review-author">中3生 保護者（お母様）</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        勉強嫌いな子に対しても無理強いすることなく、いつも前向きな言葉をかけてくれる先生方のおかげで、<strong>志望校は厳しいと周りに言われていましたが、自信を持って臨むことができました</strong>。面談も丁寧で、子どもだけでなく親も支えてもらいました。塾をどこにしようか迷われている方はぜひ体験に行ってみてください。絶対にお勧めします。
+      </div>
+      <div class="review-author">受験生 保護者</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        「押し付ける」ではなく「寄り添う」指導が大変魅力に感じております。勉強・塾嫌いの我が子２人お世話になりましたが、おかげさまで<strong>どちらも志望校に合格</strong>できました。下の子が産まれて送迎に悩んでいた際も、帰りに家まで送っていただいてとても助かりました。
+      </div>
+      <div class="review-author">卒業生 保護者</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        志望校に合わせた参考書の選択、模試の回答方法のコツ、親ではわからない・学校では教えてもらえないことをアドバイスしてくださいます。通塾して５ヶ月ですが、<strong>評定が上がりました</strong>。心が折れそうな時の励まし方もちょうど良い。自習スペースが自由に利用できるので日曜日を除きほぼ毎日夜9時まで勉強しています。
+      </div>
+      <div class="review-author">在塾生 保護者</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        <strong>中学の勉強すらままならなかった自分を新潟大学に導いてくれた塾</strong>です。
+      </div>
+      <div class="review-author">卒業生（大学受験）</div>
+    </div>
+  </div>
+
+  <!-- ===== URGENCY ===== -->
+  <div class="urgency">
+    <div class="urgency-title">
+      <span>「もう少し後で…」</span><br>
+      その先送りが<br>お子さんの未来を<br>左右します
+    </div>
+    <div class="urgency-text">
+      高校受験は、3年間の積み重ねで決まります。<br>
+      中1の1学期からすでに差はついています。<br>
+      今動くか、動かないかで、<br>
+      2年後・3年後の結果が変わります。
+    </div>
+    <div class="urgency-boxes">
+      <div class="urgency-box">
+        <strong>今すぐ</strong>
+        早期対策で余裕をもって志望校を目指せる
+      </div>
+      <div class="urgency-box">
+        <strong>中3から</strong>
+        巻き返しに必死で精神的にも追い詰められる
+      </div>
+    </div>
+    <a href="https://lin.ee/55jD9bw" class="hero-cta" style="background:#FFD700; color:#c0392b; display:block; margin: 0 auto; max-width:320px; padding:17px 32px; border-radius:50px; text-decoration:none; font-weight:900; font-size:16px; letter-spacing:0.04em;">
+      今すぐ無料体験を申し込む →
+    </a>
+  </div>
+
+  <!-- ===== PLAN ===== -->
+  <div class="section">
+    <div class="section-label">PLAN</div>
+    <div class="section-title">まずは<em>無料</em>で<br>体験できます</div>
+    <div class="divider"></div>
+
+    <div class="plan-card">
+      <div class="plan-name">おためしプラン</div>
+      <div class="plan-desc">塾の雰囲気・指導スタイルを体験。どんな環境で学ぶかを確認できます。</div>
+      <div class="plan-price">無料体験授業 <span>実施中</span></div>
+    </div>
+
+    <div class="plan-card popular">
+      <div class="plan-pop-badge">🔥 人気プラン</div>
+      <div class="plan-name">習慣化プラン</div>
+      <div class="plan-desc">自習スペース活用＋個別指導で、学習習慣を徹底的に定着させます。</div>
+      <div class="plan-price">詳細はお問い合わせ <span>ください</span></div>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-name">学力向上プラン</div>
+      <div class="plan-desc">受験対策まで見据えた本格的な学力向上コース。</div>
+      <div class="plan-price">詳細はお問い合わせ <span>ください</span></div>
+    </div>
+
+    <div class="plan-note">
+      入塾金・入会金 一切なし<br>
+      教材購入は原則不要<br>
+      年度初めの教材費のみ
+    </div>
+  </div>
+
+  <!-- ===== CTA FOOTER ===== -->
+  <div class="cta-footer">
+    <div class="cta-footer-title">
+      まず一歩、<br>無料体験から<br>始めませんか？
+    </div>
+    <div class="cta-footer-sub">
+      お子さんの現状を聞かせてください。<br>
+      最適な学習プランをご提案します。<br>
+      お気軽にどうぞ。
+    </div>
+    <a href="https://lin.ee/55jD9bw" class="cta-btn-line">💬 LINEで気軽に相談する</a>
+    <div style="height:14px;"></div>
+    <a href="https://scacademy-shibata.jp/contact/" class="cta-btn-main">📝 お問い合わせ・無料体験を申し込む</a>
+    <div class="info-row">
+      <span class="info-pill">📍 新発田駅徒歩2分</span>
+      <span class="info-pill">📞 0254-42-9042</span>
+      <span class="info-pill">🕒 平日15〜21時</span>
+    </div>
+    <div class="footer-small">
+      SCアカデミー<br>
+      新潟県新発田市豊町2-10-23 ダイヤパレスライブステーション1F
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
